@@ -87,56 +87,35 @@ int randint(int l, int r){
 	return del + rand() % del;
 }
 void mydisplay(){
+#define draw(TYPE, OBJ, NUM) do{ \
+	glBegin(TYPE); \
+	FOR(i, 0, NUM) glVertex2fv(OBJ[i]); \
+	glEnd(); \
+}while(0)
+
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	glColor3f(0, 0, 0);
-	glBegin(GL_POLYGON);
-		FOR(i, 0, 5) glVertex2fv(poly1[i]);
-	glEnd();
-	glBegin(GL_POLYGON);
-		FOR(i, 0, 4) glVertex2fv(poly2[i]);
-	glEnd();
-	glBegin(GL_POLYGON);
-		FOR(i, 0, 6) glVertex2fv(poly3[i]);
-	glEnd();
-	glBegin(GL_POLYGON);
-		FOR(i, 0, 4) glVertex2fv(poly4[i]);
-	glEnd();
-	glBegin(GL_LINES);
-		FOR(i, 0, 8) glVertex2fv(line1[i]);
-	glEnd();
-	glBegin(GL_LINES);
-		FOR(i, 0, 4) glVertex2fv(line4[i]);
-	glEnd();
-	glBegin(GL_LINE_STRIP);
-		FOR(i, 0, 32) glVertex2fv(line2[i]);
-	glEnd();
-	glBegin(GL_POLYGON);
-		FOR(i, 0, 6) glVertex2fv(poly5[i]);
-	glEnd();
-	glBegin(GL_POLYGON);
-		FOR(i, 0, 19) glVertex2fv(poly6[i]);
-	glEnd();
-	glBegin(GL_POLYGON);
-		FOR(i, 0, 4) glVertex2fv(poly7[i]);
-	glEnd();
-	glBegin(GL_POLYGON);
-		FOR(i, 0, 15) glVertex2fv(poly8[i]);
-	glEnd();
-	glBegin(GL_POLYGON);
-		FOR(i, 0, 4) glVertex2fv(poly9[i]);
-	glEnd();
-	glBegin(GL_LINE_STRIP);
-		FOR(i, 0, 7) glVertex2fv(line3[i]);
-	glEnd();
+	draw(GL_POLYGON, poly1, 5);
+	draw(GL_POLYGON, poly2, 4);
+	draw(GL_POLYGON, poly3, 6);
+	draw(GL_POLYGON, poly4, 4);
+	draw(GL_LINES, line1, 8);
+	draw(GL_LINES, line4, 4);
+	draw(GL_LINE_STRIP, line2, 32);
+	draw(GL_POLYGON, poly5, 6);
+	draw(GL_POLYGON, poly6, 19);
+	draw(GL_POLYGON, poly7, 4);
+	draw(GL_POLYGON, poly8, 15);
+	draw(GL_POLYGON, poly9, 4);
+	draw(GL_LINE_STRIP, line3, 7);
 	glColor3f(1.0, 1.0, 1.0);
-	glBegin(GL_POLYGON);
-		FOR(i, 0, 14) glVertex2fv(poly10[i]);
-	glEnd();
-	glBegin(GL_POLYGON);
-		FOR(i, 0, 14) glVertex2fv(poly11[i]);
-	glEnd();
+	draw(GL_POLYGON, poly10, 14);
+	draw(GL_POLYGON, poly11, 14);
+
 	glFlush();
+
+#undef draw
 }
 
 void init(){
