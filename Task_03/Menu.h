@@ -3,7 +3,7 @@
 #include <GLUT/GLUT.h>
 
 
-enum {mNew = 1, mOpen, mClose, mSave,
+enum {mNormal = 0, mNew = 1, mOpen, mClose, mSave,
       mSelect, mCopy, mPaste, mDel,
       mLine, mSquare, mPolygon, mCircle, mEllipse, mBezier, mFill, mEraser,
       mScan, mEdge, mFlood

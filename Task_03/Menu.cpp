@@ -1,5 +1,22 @@
 #include "Menu.h"
+#include "Automaton.h"
+
 void processMenuEvents(int option) {
+	switch(option){
+		case mLine: 
+			curState = mLine; 
+			curShape = new Line(paper);
+			break;
+		case mCircle:
+			curState = mCircle;
+			curShape = new Circle(paper);
+			break;
+		case mSquare:
+			curState = mSquare;
+			curShape = new Square(paper);
+			break;
+		default: curState = mNormal;
+	}
 }
 
 void createGLUTMenus() {
