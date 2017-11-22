@@ -1,14 +1,20 @@
 #include "Automaton.h"
 #include "DrawAlgorithm.h"
+#include "Pen.h"
+#include <cmath>
 
 Paper *paper;
 int winWidth, winHeigth;
 GLfloat zoomFactor;
 
+double t;
 void display() {
 	glClear(GL_COLOR_BUFFER_BIT);
 	paper -> clearBuffer();
+	LineAlgorithm <Pen> la((Pen(paper)));
+	la.LineBresenhamAlgorithm(250, 250, 250 + 100 * cos(t), 250 + 100 * sin(t));
 	paper -> display();
+	t += 0.001;
 	glFlush();
 	glutSwapBuffers();
 }

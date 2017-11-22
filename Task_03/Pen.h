@@ -5,7 +5,9 @@
 struct Pen{
 	Paper *paper;
 	Pen(Paper *paper):paper(paper){ }
-	void drawPoint(int x, int y);
+	void drawPoint(int x, int y) {
+		paper -> setPixel(x, y);
+	}
 };
 
 #endif
