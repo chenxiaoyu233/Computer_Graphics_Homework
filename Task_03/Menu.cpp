@@ -23,6 +23,11 @@ void processMenuEvents(int option) {
 			curShape = new Polygon(paper);
 			shape.push_back(curShape);
 			break;
+		case mBezier:
+			curState = mBezier;
+			curShape = new Bezier(paper);
+			shape.push_back(curShape);
+			break;
 		default: curState = mNormal;
 	}
 }

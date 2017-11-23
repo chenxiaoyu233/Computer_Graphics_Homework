@@ -1,5 +1,5 @@
-main: main.cpp Paper.o Automaton.o Menu.o KeyPoint.o Point.o Shape.o Circle.o Line.o Square.o Polygon.o
-	g++ main.cpp Paper.o Automaton.o Menu.o KeyPoint.o Point.o Shape.o Circle.o Line.o Square.o Polygon.o \
+main: main.cpp Paper.o Automaton.o Menu.o KeyPoint.o Point.o Shape.o Circle.o Line.o Square.o Polygon.o Bezier.o
+	g++ main.cpp Paper.o Automaton.o Menu.o KeyPoint.o Point.o Shape.o Circle.o Line.o Square.o Polygon.o Bezier.o\
 		-framework OpenGL -framework GLUT -framework Foundation \
 		-g -o main.cpp.out
 Automaton.o: Automaton.cpp Automaton.h Menu.h LineAlgorithm.h
@@ -22,5 +22,7 @@ Square.o: Square.cpp Square.h
 	g++ Square.cpp -framework OpenGL -framework GLUT -framework Foundation -c -g
 Polygon.o: Polygon.cpp Polygon.h
 	g++ Polygon.cpp -framework OpenGL -framework GLUT -framework Foundation -c -g
+Bezier.o: Bezier.cpp Bezier.h
+	g++ Bezier.cpp -framework OpenGL -framework GLUT -framework Foundation -c -g
 clean: 
 	rm -r *.out* *.o
