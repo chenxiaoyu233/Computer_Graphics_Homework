@@ -12,7 +12,7 @@ struct Shape{
 	vector <KeyPoint*> key;
 	int maxKeyNumber;
 	Shape(Paper *paper);
-	bool isOver();
+	virtual bool isOver();
 	virtual void display() = 0;
 	void addKey(KeyPoint *kp);
 };
@@ -20,5 +20,6 @@ struct Shape{
 #include "Circle.h"
 #include "Line.h"
 #include "Square.h"
+#include "Polygon.h"
 
 #endif

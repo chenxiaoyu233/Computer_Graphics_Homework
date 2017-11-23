@@ -45,7 +45,6 @@ void mouseButton(int botton, int state, int x, int y){
 			}
 			if(curShape != NULL && curShape -> isOver()) {
 				curState = mNormal;
-				shape.push_back(curShape);
 				curShape = NULL;
 			}
 			break;

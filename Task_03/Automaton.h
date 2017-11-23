@@ -11,6 +11,7 @@ extern int winWidth, winHeigth;
 extern GLfloat zoomFactor;
 extern int curState, curKey;
 extern Shape *curShape;
+extern vector <Shape*> shape;
 
 void display();
 void init();

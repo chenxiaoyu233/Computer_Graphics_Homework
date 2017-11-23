@@ -6,14 +6,22 @@ void processMenuEvents(int option) {
 		case mLine: 
 			curState = mLine; 
 			curShape = new Line(paper);
+			shape.push_back(curShape);
 			break;
 		case mCircle:
 			curState = mCircle;
 			curShape = new Circle(paper);
+			shape.push_back(curShape);
 			break;
 		case mSquare:
 			curState = mSquare;
 			curShape = new Square(paper);
+			shape.push_back(curShape);
+			break;
+		case mPolygon:
+			curState = mPolygon;
+			curShape = new Polygon(paper);
+			shape.push_back(curShape);
 			break;
 		default: curState = mNormal;
 	}
