@@ -9,6 +9,7 @@ using namespace std;
 #include "CircleAlgorithm.h"
 #include "LineAlgorithm.h"
 #include "BezierAlgorithm.h"
+#include "EllipseAlgorithm.h"
 
 
 #endif

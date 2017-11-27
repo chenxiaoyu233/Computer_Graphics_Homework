@@ -22,5 +22,6 @@ struct Shape{
 #include "Square.h"
 #include "Polygon.h"
 #include "Bezier.h"
+#include "Ellipse.h"
 
 #endif

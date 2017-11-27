@@ -4,10 +4,10 @@
 
 struct Pen{
 	Paper *paper;
-	Pen(Paper *paper):paper(paper){ }
-	void drawPoint(int x, int y) {
-		paper -> setPixel(x, y);
-	}
+	int ti; // 反走样(抗锯齿)倍数
+	//int R, G, B;
+	Pen(Paper *paper);
+	void drawPoint(int x, int y);
 };
 
 #endif

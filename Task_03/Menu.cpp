@@ -28,6 +28,11 @@ void processMenuEvents(int option) {
 			curShape = new Bezier(paper);
 			shape.push_back(curShape);
 			break;
+		case mEllipse:
+			curState = mEllipse;
+			curShape = new Ellipse(paper);
+			shape.push_back(curShape);
+			break;
 		default: curState = mNormal;
 	}
 }

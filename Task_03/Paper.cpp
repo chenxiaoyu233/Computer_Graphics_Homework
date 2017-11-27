@@ -34,6 +34,8 @@ void Paper::setPixel(int x, int y, int R, int G, int B){
 	paper[y*Width*3 + x*3 + 2] = B;
 }
 GLubyte Paper::accessPixel(int x, int y, int C){
+	if(x < 0 || y < 0) return 0;
+	if(x >= Width || y >= Height) return 0;
 	return paper[y*Width*3 + x*3 + C];
 }
 Paper::~Paper(){

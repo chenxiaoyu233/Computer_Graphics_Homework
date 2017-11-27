@@ -2,6 +2,8 @@
 #define POINT_H_
 #include <cmath>
 
+extern const float pi;
+
 struct Point{
 	int x, y;
 	Point(int x = 0, int y = 0):x(x), y(y){}
@@ -13,6 +15,7 @@ struct Point{
 double Dot(Point, Point);
 double Cross(Point,  Point);
 double Length(Point);
+Point Rotate(Point, double);
 
 
 #endif
