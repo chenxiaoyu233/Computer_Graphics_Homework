@@ -7,5 +7,6 @@ Line::Line(Paper *paper):Shape(paper){ maxKeyNumber = 2; }
 void Line::display(){
 	if(!isOver()) return;
 	LineAlgorithm <Pen> lin((Pen(this -> paper)));
-	lin.LineBresenhamAlgorithm(key[0]->x, key[0]->y, key[1]->x, key[1]->y);
+	if(curAlgorithm == mBresenham) lin.LineBresenhamAlgorithm(key[0]->x, key[0]->y, key[1]->x, key[1]->y);
+	else if(curAlgorithm == mWuXiaoLin) lin.LineWuXiaoLinAlgorithm(key[0]->x, key[0]->y, key[1]->x, key[1]->y);
 }

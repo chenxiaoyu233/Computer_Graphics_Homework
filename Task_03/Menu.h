@@ -6,6 +6,7 @@
 enum {mNormal = 0, mNew = 1, mOpen, mClose, mSave,
       mSelect, mCopy, mPaste, mDel,
       mLine, mSquare, mPolygon, mCircle, mEllipse, mBezier, mFill, mEraser,
+      mBresenham, mWuXiaoLin,
       mScan, mEdge, mFlood
 } mOptions;
 

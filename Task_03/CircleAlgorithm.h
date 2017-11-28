@@ -5,14 +5,14 @@ template <class Pen>
 class CircleAlgorithm{
 	private:
 		Pen pen;
-		void midPointSetPixel(Point c, Point pt);
+		void midPointSetPixel(Point <int> c, Point <int> pt);
 	public:
 		CircleAlgorithm(Pen pen):pen(pen){ }
 		void CircleMidPoint(int cx, int cy, int R);
 };
 
 template <class Pen>
-void CircleAlgorithm <Pen>::midPointSetPixel(Point c, Point pt){
+void CircleAlgorithm <Pen>::midPointSetPixel(Point <int> c, Point <int> pt){
 	pen.drawPoint(c.x + pt.x, c.y + pt.y);
 	pen.drawPoint(c.x - pt.x, c.y + pt.y);
 	pen.drawPoint(c.x + pt.x, c.y - pt.y);
@@ -25,7 +25,7 @@ void CircleAlgorithm <Pen>::midPointSetPixel(Point c, Point pt){
 
 template <class Pen>
 void CircleAlgorithm <Pen>::CircleMidPoint(int cx, int cy, int R){
-	Point c(cx, cy), pt(0, R);
+	Point <int> c(cx, cy), pt(0, R);
 	int p = 1 - R;
 	while(pt.x <= pt.y){
 		midPointSetPixel(c, pt);

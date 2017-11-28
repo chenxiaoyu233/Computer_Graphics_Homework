@@ -3,6 +3,12 @@
 
 void processMenuEvents(int option) {
 	switch(option){
+		case mBresenham:
+			curAlgorithm = mBresenham;
+			break;
+		case mWuXiaoLin:
+			curAlgorithm = mWuXiaoLin;
+			break;
 		case mLine: 
 			curState = mLine; 
 			curShape = new Line(paper);
@@ -38,7 +44,7 @@ void processMenuEvents(int option) {
 }
 
 void createGLUTMenus() {
-	int menu, mFile, mEdit, mTools, mFill;
+	int menu, mFile, mEdit, mTools, mFill, mAntialiase;
          mFile = glutCreateMenu(processMenuEvents);
          glutAddMenuEntry("新建", mNew);
          glutAddMenuEntry("打开", mOpen);
@@ -56,6 +62,10 @@ void createGLUTMenus() {
 	 glutAddMenuEntry("边界填充", mEdge);
 	 glutAddMenuEntry("洪泛填充", mFlood);
 
+	 mAntialiase = glutCreateMenu(processMenuEvents);
+	 glutAddMenuEntry("Bresenham算法", mBresenham);
+	 glutAddMenuEntry("WuXiaoLin算法", mWuXiaoLin);
+
 	 mTools = glutCreateMenu(processMenuEvents);
 	 glutAddMenuEntry("线段", mLine);
 	 glutAddMenuEntry("矩形", mSquare);
@@ -65,6 +75,7 @@ void createGLUTMenus() {
 	 glutAddMenuEntry("Bezier曲线", mBezier);
 	 glutAddSubMenu("填充", mFill);
 	 glutAddMenuEntry("擦子", mEraser);
+	 glutAddSubMenu("抗锯齿", mAntialiase);
 
          menu = glutCreateMenu(processMenuEvents);
 	 glutAddSubMenu("文件", mFile);

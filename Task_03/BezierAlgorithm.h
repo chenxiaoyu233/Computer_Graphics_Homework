@@ -8,9 +8,9 @@ class BezierAlgorithm{
 	private:
 		Pen pen;
 		int* C;
-		vector <Point> vec;
+		vector <Point<int> > vec;
 		void getComb(int n);
-		Point clacPoint(float u);
+		Point<int> clacPoint(float u);
 	public:
 		BezierAlgorithm(Pen pen):pen(pen){ }
 		void addPoint(int x, int y);
@@ -19,7 +19,7 @@ class BezierAlgorithm{
 
 template <class Pen>
 void BezierAlgorithm <Pen> :: addPoint(int x, int y){
-	if(vec.size() < 10) vec.push_back(Point(x, y));
+	if(vec.size() < 10) vec.push_back(Point<int>(x, y));
 }
 
 
@@ -33,15 +33,17 @@ void BezierAlgorithm <Pen> :: getComb(int n){
 }
 
 template <class Pen>
-Point BezierAlgorithm <Pen> :: clacPoint(float u){
+Point<int> BezierAlgorithm <Pen> :: clacPoint(float u){
 	int n = vec.size() - 1;
 	float x = 0, y = 0;
 	for(int i = 0; i <= n; i++){
 		x = x + float(vec[i].x) * C[i] * pow(u, i) * pow(1 - u, n - i);
 		y = y + float(vec[i].y) * C[i] * pow(u, i) * pow(1 - u, n - i);
 	}
-	return Point(x, y);
+	return Point<int> (x, y);
 }
+
+extern int curAlgorithm;
 
 template <class Pen>
 void BezierAlgorithm <Pen> :: BezierCompute(int N){
@@ -49,11 +51,12 @@ void BezierAlgorithm <Pen> :: BezierCompute(int N){
 	int n = vec.size(); 
 	getComb(n-1);
 	LineAlgorithm <Pen> lin((Pen(pen)));
-	Point last = clacPoint(0);
+	Point<int> last = clacPoint(0);
 	for(int i = 1; i <= N; i++){
 		float u = float(i) / float(N);
-		Point cur = clacPoint(u);
-		lin.LineBresenhamAlgorithm(last.x, last.y, cur.x, cur.y);
+		Point<int> cur = clacPoint(u);
+		if(curAlgorithm == mBresenham) lin.LineBresenhamAlgorithm(last.x, last.y, cur.x, cur.y);
+		else if(curAlgorithm == mWuXiaoLin) lin.LineWuXiaoLinAlgorithm(last.x, last.y, cur.x, cur.y);
 		last = cur;
 	}
 	delete[] C;

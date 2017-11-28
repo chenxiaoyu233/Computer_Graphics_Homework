@@ -15,5 +15,5 @@ void Bezier::display(){
 	}
 	if(key[key.size()-1] != key[0]) 
 		bez.addPoint(key[key.size()-1] -> x, key[key.size()-1] -> y);
-	bez.BezierCompute(1000);
+	bez.BezierCompute(30);
 }

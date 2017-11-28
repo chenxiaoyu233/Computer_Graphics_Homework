@@ -12,6 +12,7 @@ void Polygon::display(){
 	if(key.size() < 2) return;
 	LineAlgorithm <Pen> lin((Pen(this -> paper)));
 	for(int i = 1; i < key.size(); i++) {
-		lin.LineBresenhamAlgorithm(key[i-1] -> x, key[i-1] -> y, key[i] -> x, key[i] -> y);
+		if(curAlgorithm == mBresenham) lin.LineBresenhamAlgorithm(key[i-1] -> x, key[i-1] -> y, key[i] -> x, key[i] -> y);
+		else if(curAlgorithm == mWuXiaoLin) lin.LineWuXiaoLinAlgorithm(key[i-1] -> x, key[i-1] -> y, key[i] -> x, key[i] -> y);
 	}
 }

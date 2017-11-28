@@ -12,7 +12,7 @@ GLfloat zoomFactor;
 vector <KeyPoint*> keyPoints;
 vector <Shape*> shape;
 Shape *curShape;
-int curState, curKey;
+int curState, curKey, curAlgorithm;
 
 void display() {
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -62,6 +62,7 @@ void mouseMotion(int x, int y){
 void init(){
 	paper = new Paper(500, 500);
 	curState = mNormal;
+	curAlgorithm = mBresenham;
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowPosition(50, 100);
 	glutInitWindowSize(500, 500);

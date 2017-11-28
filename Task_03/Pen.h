@@ -4,10 +4,10 @@
 
 struct Pen{
 	Paper *paper;
-	int ti; // 反走样(抗锯齿)倍数
-	//int R, G, B;
+	int R, G, B;
 	Pen(Paper *paper);
-	void drawPoint(int x, int y);
+	void setColor(int R, int G, int B);
+	void drawPoint(int x, int y, int grayScale = 255);// grayScale: 0 -> 255 || 8 bit
 };
 
 #endif

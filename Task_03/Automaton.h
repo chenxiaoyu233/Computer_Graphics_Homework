@@ -9,7 +9,7 @@
 extern Paper *paper;
 extern int winWidth, winHeigth;
 extern GLfloat zoomFactor;
-extern int curState, curKey;
+extern int curState, curKey, curAlgorithm;
 extern Shape *curShape;
 extern vector <Shape*> shape;
 
