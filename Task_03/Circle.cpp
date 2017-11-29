@@ -10,5 +10,6 @@ void Circle::display(){
 	int dx = (key[0] -> x - key[1] -> x);
 	int dy = (key[0] -> y - key[1] -> y);
 	int R = sqrt(dx * dx + dy * dy);
-	cir.CircleMidPoint(key[0] -> x, key[0] -> y, R);
+	if(curAlgorithm == mBresenham) cir.CircleMidPoint(key[0] -> x, key[0] -> y, R);
+	if(curAlgorithm == mWuXiaoLin) cir.CircleWuXiaoLinAlgorithm(key[0] -> x, key[0] -> y, R);
 }

@@ -1,6 +1,6 @@
 #include "KeyPoint.h"
 
-const int KeyPointSize = 5;
+const int KeyPointSize = 11;
 
 void KeyPoint::setPos(int x, int y){
 	this -> x = x, this -> y = y;
@@ -8,7 +8,8 @@ void KeyPoint::setPos(int x, int y){
 
 void KeyPoint::display(){
 	CircleAlgorithm <Pen> cir((Pen(this -> paper)));
-	cir.CircleMidPoint(x, y, KeyPointSize);
+	if(curAlgorithm == mBresenham) cir.CircleMidPoint(x, y, KeyPointSize);
+	else if(curAlgorithm == mWuXiaoLin) cir.CircleWuXiaoLinAlgorithm(x, y, KeyPointSize);
 }
 
 bool KeyPoint::isIn(int x, int y){

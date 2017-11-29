@@ -62,7 +62,7 @@ void mouseMotion(int x, int y){
 void init(){
 	paper = new Paper(500, 500);
 	curState = mNormal;
-	curAlgorithm = mBresenham;
+	curAlgorithm = mWuXiaoLin;
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowPosition(50, 100);
 	glutInitWindowSize(500, 500);
