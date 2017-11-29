@@ -6,6 +6,7 @@ struct Pen{
 	Paper *paper;
 	int R, G, B;
 	Pen(Paper *paper);
+	int getColor(int which);
 	void setColor(int R, int G, int B);
 	void drawPoint(int x, int y, int grayScale = 255);// grayScale: 0 -> 255 || 8 bit
 };

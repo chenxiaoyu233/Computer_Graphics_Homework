@@ -39,6 +39,11 @@ void processMenuEvents(int option) {
 			curShape = new Ellipse(paper);
 			shape.push_back(curShape);
 			break;
+		case mFlood:
+			curState = mFlood;
+			curShape = new Fill(paper);
+			shape.push_back(curShape);
+			break;
 		default: curState = mNormal;
 	}
 }

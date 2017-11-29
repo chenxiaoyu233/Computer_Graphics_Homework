@@ -9,6 +9,15 @@ int value[3][3] = {
 Pen::Pen(Paper *paper):paper(paper){ 
 	R = G = B = 255;
 }
+
+int Pen::getColor(int which){
+	switch(which){
+		case 0: return R;
+		case 1: return G;
+		case 2: return B;
+	}
+	return 0;
+}
 void Pen::setColor(int R, int G, int B){
 	this -> R = R;
 	this -> G = G;

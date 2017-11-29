@@ -23,5 +23,6 @@ struct Shape{
 #include "Polygon.h"
 #include "Bezier.h"
 #include "Ellipse.h"
+#include "Fill.h"
 
 #endif

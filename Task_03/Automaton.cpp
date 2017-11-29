@@ -18,8 +18,8 @@ void display() {
 	glClear(GL_COLOR_BUFFER_BIT);
 	paper -> clearBuffer();
 
-	for(int i = 0; i < keyPoints.size(); i++) keyPoints[i] -> display();
 	for(int i = 0; i < shape.size(); i++) shape[i] -> display();
+	for(int i = 0; i < keyPoints.size(); i++) keyPoints[i] -> display();
 
 	paper -> display();
 	glFlush();
@@ -40,7 +40,7 @@ void mouseButton(int botton, int state, int x, int y){
 				keyPoints.push_back(new KeyPoint(x, y, paper));
 				curKey = keyPoints.size() - 1;
 			}
-			if(curState >= mLine && curState <= mFill && curShape != NULL && !curShape -> isOver()){
+			if(curState >= mLine && curState <= mFlood && curShape != NULL && !curShape -> isOver()){
 				curShape -> addKey(keyPoints[curKey]);
 			}
 			if(curShape != NULL && curShape -> isOver()) {

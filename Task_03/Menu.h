@@ -5,9 +5,9 @@
 
 enum {mNormal = 0, mNew = 1, mOpen, mClose, mSave,
       mSelect, mCopy, mPaste, mDel,
-      mLine, mSquare, mPolygon, mCircle, mEllipse, mBezier, mFill, mEraser,
+      mLine, mSquare, mPolygon, mCircle, mEllipse, mBezier, 
+      mScan, mEdge, mFlood, mEraser,
       mBresenham, mWuXiaoLin,
-      mScan, mEdge, mFlood
 } mOptions;
 
 void processMenuEvents(int option);
