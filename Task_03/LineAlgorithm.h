@@ -57,11 +57,18 @@ void  LineAlgorithm <Pen> :: LineBresenhamAlgorithm(int x1, int y1, int x2, int 
 
 template <class Pen>
 void LineAlgorithm <Pen> :: WuXiaoLinSetPixel(int x, int y, int grayScale){
-	switch(flag){
+	/*switch(flag){
 		case 0: pen.drawPoint(c.x + x, c.y + y, grayScale); break;
 		case 1: pen.drawPoint(c.x + y, c.y + x, grayScale); break;
 		case 2: pen.drawPoint(c.x + x, c.y - y, grayScale); break;
 		case 3: pen.drawPoint(c.x + y, c.y - x, grayScale); break;
+	}*/
+	//加入了混色，但是测试出来的效果并不太好
+	switch(flag){
+		case 0: pen.mixPoint(c.x + x, c.y + y, grayScale); break;
+		case 1: pen.mixPoint(c.x + y, c.y + x, grayScale); break;
+		case 2: pen.mixPoint(c.x + x, c.y - y, grayScale); break;
+		case 3: pen.mixPoint(c.x + y, c.y - x, grayScale); break;
 	}
 }
 

@@ -14,6 +14,7 @@ struct KeyPoint{
 	bool isIn(int x, int y);
 	void setPos(int x, int y);
 	void display();
+	void display(int R, int G, int B);
 };
 
 #endif

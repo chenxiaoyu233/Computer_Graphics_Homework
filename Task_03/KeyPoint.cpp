@@ -11,6 +11,11 @@ void KeyPoint::display(){
 	if(curAlgorithm == mBresenham) cir.CircleMidPoint(x, y, KeyPointSize);
 	else if(curAlgorithm == mWuXiaoLin) cir.CircleWuXiaoLinAlgorithm(x, y, KeyPointSize);
 }
+void KeyPoint::display(int R, int G, int B){
+	CircleAlgorithm <Pen> cir((Pen(this -> paper, R, G, B)));
+	if(curAlgorithm == mBresenham) cir.CircleMidPoint(x, y, KeyPointSize);
+	else if(curAlgorithm == mWuXiaoLin) cir.CircleWuXiaoLinAlgorithm(x, y, KeyPointSize);
+}
 
 bool KeyPoint::isIn(int x, int y){
 	int X = x - this -> x;

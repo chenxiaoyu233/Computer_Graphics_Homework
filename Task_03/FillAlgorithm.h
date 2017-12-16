@@ -30,6 +30,7 @@ void FillAlgorithm <Pen> :: FillFloodAlgorithm(int cx, int cy){
 #define Y second
 	while(!q.empty()){
 		pii tt = q.front(); q.pop();
+		pen.drawPoint(tt.X, tt.Y);
 		for(int i = 0; i < 4; i++){
 			int x1 = tt.X + dirx[i], y1 = tt.Y + diry[i];
 			if(x1 < 0 || y1 < 0 || x1 >= pen.paper -> Width || y1 >= pen.paper -> Height) continue;
@@ -37,7 +38,6 @@ void FillAlgorithm <Pen> :: FillFloodAlgorithm(int cx, int cy){
 			if(pen.paper -> accessPixel(x1, y1, 1) != tG) continue;
 			if(pen.paper -> accessPixel(x1, y1, 2) != tB) continue;
 			if(!vis[y1*(pen.paper -> Width) + x1]){
-				pen.drawPoint(x1, y1);
 				vis[y1*(pen.paper -> Width) + x1] = 1;
 				q.push(pii(x1, y1));
 			}

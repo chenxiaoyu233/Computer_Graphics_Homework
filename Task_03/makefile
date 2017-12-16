@@ -1,5 +1,5 @@
-main: main.cpp Paper.o Pen.o Automaton.o Menu.o KeyPoint.o Point.o Shape.o Circle.o Line.o Square.o Polygon.o Bezier.o Ellipse.o Fill.o FillAlgorithm.o
-	g++ main.cpp Paper.o Pen.o Automaton.o Menu.o KeyPoint.o Point.o Shape.o Circle.o Line.o Square.o Polygon.o Bezier.o Ellipse.o Fill.o FillAlgorithm.o\
+main: main.cpp Paper.o Pen.o Automaton.o Menu.o KeyPoint.o Point.o Shape.o Circle.o Line.o Square.o Polygon.o Bezier.o Ellipse.o Fill.o FillAlgorithm.o Interface.o SelectBox.o
+	g++ main.cpp Paper.o Pen.o Automaton.o Menu.o KeyPoint.o Point.o Shape.o Circle.o Line.o Square.o Polygon.o Bezier.o Ellipse.o Fill.o FillAlgorithm.o Interface.o SelectBox.o \
 		-framework OpenGL -framework GLUT -framework Foundation \
 		-g -o main.cpp.out
 Automaton.o: Automaton.cpp Automaton.h Menu.h LineAlgorithm.h
@@ -32,5 +32,9 @@ Fill.o: Fill.cpp Fill.h
 	g++ Fill.cpp -c -g
 FillAlgorithm.o: FillAlgorithm.cpp FillAlgorithm.h
 	g++ FillAlgorithm.cpp -c -g
+Interface.o: Interface.cpp Interface.h
+	g++ Interface.cpp -c -g
+SelectBox.o: SelectBox.cpp SelectBox.h
+	g++ SelectBox.cpp -c -g
 clean: 
 	rm -r *.out* *.o
