@@ -9,11 +9,12 @@ bool Bezier::isOver(){
 }
 void Bezier::display(){
 	if(key.size() < 2) return;
-	BezierAlgorithm <Pen> bez((Pen(this -> paper)));
+	pen.paper = this -> paper;
+	BezierAlgorithm <Pen> bez(pen);
 	for(int i = 0; i < (int)key.size()-1; i++){
 		bez.addPoint(key[i] -> x, key[i] -> y);
 	}
 	if(key[key.size()-1] != key[0]) 
 		bez.addPoint(key[key.size()-1] -> x, key[key.size()-1] -> y);
-	bez.BezierCompute(30);
+	bez.BezierCompute(100);
 }

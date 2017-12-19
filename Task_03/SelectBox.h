@@ -20,6 +20,10 @@ struct SelectBox: public Interface{
 	void setTPoint(int x, int y);
 	void display();
 	void select();
+
+	//下面都是其他兄弟类中需要用的函数
+	void getColor(){}
+	void setPenPointer(Pen *p){}
 };
 
 #endif

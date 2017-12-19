@@ -6,6 +6,7 @@
 Fill::Fill(Paper *paper):Shape(paper){ maxKeyNumber = 1; }
 void Fill::display(){
 	if(!isOver()) return;
-	FillAlgorithm <Pen> fil((Pen(this -> paper)));
+	pen.paper = this -> paper;
+	FillAlgorithm <Pen> fil(pen);
 	fil.FillFloodAlgorithm(key[0] -> x, key[0] -> y);
 }

@@ -80,6 +80,13 @@ void processMenuEvents(int option) {
 		case mDel: // 这两个东西本质相同
 		case mEraser:
 			deleteKeyPoint();
+			curColorBar -> penPointer = NULL;
+			break;
+		case mColorTable:
+			isSettingColor ^= 1;
+			break;
+		case mColorAttach:
+			ColorAttach();
 			break;
 		default: curState = mNormal;
 	}
@@ -120,6 +127,8 @@ void createGLUTMenus() {
 	 glutAddSubMenu("填充", mFill);
 	 glutAddMenuEntry("擦子", mEraser);
 	 glutAddSubMenu("抗锯齿", mAntialiase);
+	 glutAddMenuEntry("调色板", mColorTable);
+	 glutAddMenuEntry("附着颜色到调色板", mColorAttach);
 
          menu = glutCreateMenu(processMenuEvents);
 	 glutAddSubMenu("文件", mFile);

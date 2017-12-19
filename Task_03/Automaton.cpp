@@ -17,6 +17,9 @@ Shape *curShape;
 int curState, curKey, curAlgorithm, isAddingKeyPoint;
 Interface* curInterface;
 int isAddingSelect;
+int isSettingColor;
+Interface *curColorBar;
+int curColorFlag;
 
 bool hideFlag;
 
@@ -73,9 +76,18 @@ void mouseButton(int botton, int state, int x, int y){
 					curShape = NULL;
 					isAddingKeyPoint = 0;
 				}
-			}else if(curState == mSelect && curInterface != NULL){
+			}
+			if(curState == mSelect && curInterface != NULL){
 				curInterface -> setSPoint(x, y);
 				curInterface -> select();
+			}
+			curColorFlag = 0;
+			if(isSettingColor){
+				if(y >= 0 && y <= 90 && x >= 90 && x <= 90 + 255 && curColorBar != NULL){
+					if(y <= 30) curColorBar -> Bx = x - 90, curColorFlag = 1;
+					if(y > 30 && y <= 60) curColorBar -> Gx = x - 90, curColorFlag = 2;
+					if(y > 60 && y <= 90) curColorBar -> Rx = x - 90, curColorFlag = 3;
+				}
 			}
 			break;
 		case GLUT_UP :
@@ -101,6 +113,16 @@ void mouseMotion(int x, int y){
 		curInterface -> setTPoint(x, y);
 		curInterface -> select();
 	}
+	if(curColorFlag && curColorBar != NULL){
+		int tmpx = x - 90;
+		if(tmpx > 255) tmpx = 255;
+		if(tmpx < 1) tmpx = 1;
+		switch (curColorFlag){
+			case 1: curColorBar -> Bx = tmpx; break;
+			case 2: curColorBar -> Gx = tmpx; break;
+			case 3: curColorBar -> Rx = tmpx; break;
+		}
+	}
 }
 
 void init(){
@@ -111,6 +133,11 @@ void init(){
 	curInterface = NULL;
 	curShape = NULL;
 	curKey = -1;
+
+	isSettingColor = 1; // Debug;
+	curColorBar = new Bar(Pen(paper));
+	interface.push_back(curColorBar); // 次行用于测试Bar类是否可用
+
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowPosition(50, 100);
 	glutInitWindowSize(500, 500);
@@ -157,6 +184,25 @@ void deleteKeyPoint(){
 				j = isSelected.erase(j);
 			}
 			else i++, j++;
+		}
+	}
+}
+
+void ColorAttach(){ // 如果有多个被选中的图形的话, 选取最开始绘制那一个来附着颜色
+	for(int i = 0; i < shape.size(); i++){
+		int fla = 1;
+		for(int j = 0; j < shape[i] -> key.size(); j++){
+			for(int k = 0; k < keyPoints.size(); k++){
+				if(keyPoints[k] == shape[i] -> key[j] && !isSelected[k]) {
+					fla = 0; goto bk;
+				}
+			}
+		}
+bk:
+		if(fla) {
+			(curColorBar -> penPointer) = &(shape[i] -> pen);
+			curColorBar -> getColor();
+			return;
 		}
 	}
 }

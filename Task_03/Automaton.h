@@ -19,6 +19,9 @@ struct Interface;
 extern vector <Interface*> interface;
 extern Interface* curInterface;
 extern int isAddingSelect;
+extern int isSettingColor;
+extern Interface *curColorBar;
+extern int curColorFlag;
 
 void display();
 void init();
@@ -26,5 +29,6 @@ void mouseMotion(int x, int y);
 void mouseButton(int botton, int state, int x, int y);
 void myReshape(int w, int h);
 void deleteKeyPoint();
+void ColorAttach();
 
 #endif

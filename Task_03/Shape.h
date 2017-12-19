@@ -9,9 +9,10 @@ struct KeyPoint;
 
 struct Shape{
 	Paper *paper;
+	Pen pen;
 	vector <KeyPoint*> key;
 	int maxKeyNumber;
-	Shape(Paper *paper);
+	Shape(Paper *paper, Pen pen = Pen());
 	virtual bool isOver();
 	virtual void display() = 0;
 	void addKey(KeyPoint *kp);

@@ -5,6 +5,7 @@
 struct Pen{
 	Paper *paper;
 	int R, G, B;
+	Pen(){ R = G = B = 255; }
 	Pen(Paper *paper, int R = 255, int G = 255, int B = 255);
 	int getColor(int which);
 	void setColor(int R = 255, int G = 255, int B = 255);

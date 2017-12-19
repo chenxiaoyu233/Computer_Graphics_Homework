@@ -6,7 +6,8 @@
 Square::Square(Paper *paper):Shape(paper){ maxKeyNumber = 2; }
 void Square::display(){
 	if(!isOver()) return;
-	LineAlgorithm <Pen> lin((Pen(this -> paper)));
+	pen.paper = this -> paper;
+	LineAlgorithm <Pen> lin(pen);
 	Point <int> p1(key[0] -> x, key[0] -> y), p2(key[1] -> x, key[1] -> y);
 	if(p1.x > p2.x) swap(p1, p2);
 	lin.LineBresenhamAlgorithm(p1.x, p1.y, p2.x, p1.y);

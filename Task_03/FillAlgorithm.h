@@ -5,9 +5,8 @@
 
 template <class Pen>
 class FillAlgorithm{
-	private:
-		Pen pen;
 	public:
+		Pen pen;
 		FillAlgorithm(Pen pen):pen(pen){ }
 		void FillFloodAlgorithm(int cx, int cy);
 };

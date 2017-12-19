@@ -5,16 +5,19 @@ template <class Pen>
 class LineAlgorithm{
 	private:
 		int flag;
-		Pen pen;
 		Point <int> c;
 		void BresenhamSetPixel(Point <int> p);
 		void WuXiaoLinSetPixel(int x, int y, int grayScale);
 
 	public:
+		Pen pen;
 		LineAlgorithm(Pen pen):pen(pen){ }
 		void LineBresenhamAlgorithm(int x1, int y1, int x2, int y2);
 		void LineWuXiaoLinAlgorithm(int x1, int y1, int x2, int y2);
 };
+
+#include <iostream>
+using namespace std;
 
 template <class Pen>
 void LineAlgorithm <Pen> :: BresenhamSetPixel(Point <int> p){
