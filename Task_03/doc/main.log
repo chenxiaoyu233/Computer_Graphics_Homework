@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.3.23)  26 DEC 2017 19:46
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.3.23)  26 DEC 2017 22:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1278,19 +1278,31 @@ File: wu-idea.jpeg Graphic file (type QTm)
 File: wu-draw.jpeg Graphic file (type QTm)
  <use  "wu-draw.jpeg" > [4
 
-] [5] [6] (./main.aux)
+] [5] [6]
+File: color.jpeg Graphic file (type QTm)
+
+<use  "color.jpeg" > [7] [8]
+File: tree.jpeg Graphic file (type QTm)
+ <use  "tree.jpeg" >
+File: auto.jpeg Graphic file (type QTm)
+ <use  "auto.jpeg" >
+File: op.jpeg Graphic file (type QTm)
+
+<use  "op.jpeg" > [9
+
+] [10] [11] (./main.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 20105 strings out of 493591
- 409322 string characters out of 6143546
+ 20112 strings out of 493591
+ 409383 string characters out of 6143546
  383702 words of memory out of 5000000
- 23344 multiletter control sequences out of 15000+600000
+ 23348 multiletter control sequences out of 15000+600000
  8942 words of font info for 57 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
  65i,6n,77p,10430b,259s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (6 pages).
+Output written on main.pdf (11 pages).

@@ -5,7 +5,7 @@
 #include "Pen.h"
 #include "DrawAlgorithm.h"
 
-extern const int KeyPointSize;
+extern int KeyPointSize;
 
 struct KeyPoint{
 	int x, y;

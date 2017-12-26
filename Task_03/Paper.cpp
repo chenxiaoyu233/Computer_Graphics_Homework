@@ -12,12 +12,11 @@ void Paper::reSize(int Width, int Height){
 }
 void Paper::clearBuffer(int R, int G, int B){
 	for(int i = 0; i < Width; i++)
-		for(int j = 0; j < Height; j++)
-			for(int k = 0; k < 3; k++){
-				paper[j*Width*3 + i*3 + 0] = R;
-				paper[j*Width*3 + i*3 + 1] = G;
-				paper[j*Width*3 + i*3 + 2] = B;
-			}
+		for(int j = 0; j < Height; j++){
+			paper[j*Width*3 + i*3 + 0] = R;
+			paper[j*Width*3 + i*3 + 1] = G;
+			paper[j*Width*3 + i*3 + 2] = B;
+		}
 }
 void Paper::display(){
 	glRasterPos2i(posX, posY);

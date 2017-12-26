@@ -1,6 +1,6 @@
 #include "KeyPoint.h"
 
-const int KeyPointSize = 11;
+int KeyPointSize = 11;
 
 void KeyPoint::setPos(int x, int y){
 	this -> x = x, this -> y = y;

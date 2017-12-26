@@ -95,6 +95,9 @@ void processMenuEvents(int option) {
 		case mColorAttach:
 			ColorAttach();
 			break;
+		case mClose:
+			exit(0);
+			break;
 		default: curState = mNormal;
 	}
 }
@@ -102,40 +105,40 @@ void processMenuEvents(int option) {
 void createGLUTMenus() {
 	int menu, mFile, mEdit, mTools, mFill, mAntialiase;
          mFile = glutCreateMenu(processMenuEvents);
-         glutAddMenuEntry("新建", mNew);
-         glutAddMenuEntry("打开", mOpen);
-         glutAddMenuEntry("关闭", mClose);
-         glutAddMenuEntry("保存", mSave);
+         glutAddMenuEntry("新建(未实现)", mNew);
+         glutAddMenuEntry("打开(未实现)", mOpen);
+         glutAddMenuEntry("关闭(q)", mClose);
+         glutAddMenuEntry("保存(s)", mSave);
 
 	 mEdit = glutCreateMenu(processMenuEvents);
-	 glutAddMenuEntry("普通模式", mNormal);
+	 glutAddMenuEntry("普通模式(n)", mNormal);
 	 glutAddMenuEntry("添加关键点", mKeyPoint);
-	 glutAddMenuEntry("选择", mSelect);
+	 glutAddMenuEntry("选择(c)", mSelect);
 	 //glutAddMenuEntry("拷贝", mCopy);
 	 //glutAddMenuEntry("粘贴", mPaste);
-	 glutAddMenuEntry("删除", mDel);
+	 glutAddMenuEntry("删除(d)", mDel);
 
 	 mFill = glutCreateMenu(processMenuEvents);
-	 glutAddMenuEntry("扫描线填充", mScan);
-	 glutAddMenuEntry("边界填充", mEdge);
-	 glutAddMenuEntry("洪泛填充", mFlood);
+	 glutAddMenuEntry("扫描线填充(未实现)", mScan);
+	 glutAddMenuEntry("边界填充(未实现)", mEdge);
+	 glutAddMenuEntry("洪泛填充(f)", mFlood);
 
 	 mAntialiase = glutCreateMenu(processMenuEvents);
 	 glutAddMenuEntry("Bresenham算法", mBresenham);
 	 glutAddMenuEntry("WuXiaoLin算法", mWuXiaoLin);
 
 	 mTools = glutCreateMenu(processMenuEvents);
-	 glutAddMenuEntry("线段", mLine);
-	 glutAddMenuEntry("矩形", mSquare);
-	 glutAddMenuEntry("多边形", mPolygon);
-	 glutAddMenuEntry("圆形", mCircle);
-	 glutAddMenuEntry("椭圆形", mEllipse);
-	 glutAddMenuEntry("Bezier曲线", mBezier);
-	 glutAddSubMenu("填充", mFill);
-	 glutAddMenuEntry("擦子", mEraser);
-	 glutAddSubMenu("抗锯齿", mAntialiase);
-	 glutAddMenuEntry("调色板", mColorTable);
-	 glutAddMenuEntry("附着颜色到调色板", mColorAttach);
+	 glutAddMenuEntry("线段(1)", mLine);
+	 glutAddMenuEntry("矩形(2)", mSquare);
+	 glutAddMenuEntry("多边形(3)", mPolygon);
+	 glutAddMenuEntry("圆形(4)", mCircle);
+	 glutAddMenuEntry("椭圆形(5)", mEllipse);
+	 glutAddMenuEntry("Bezier曲线(6)", mBezier);
+	 glutAddSubMenu(  "填充", mFill);
+	 glutAddMenuEntry("擦子(d)", mEraser);
+	 glutAddSubMenu(  "抗锯齿", mAntialiase);
+	 glutAddMenuEntry("调色板(t)", mColorTable);
+	 glutAddMenuEntry("附着颜色到调色板(l)", mColorAttach);
 
          menu = glutCreateMenu(processMenuEvents);
 	 glutAddSubMenu("文件", mFile);
