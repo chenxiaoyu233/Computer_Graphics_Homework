@@ -30,5 +30,10 @@ void mouseButton(int botton, int state, int x, int y);
 void myReshape(int w, int h);
 void deleteKeyPoint();
 void ColorAttach();
+void write_JPEG_file (char *filename,
+		      int quality,
+		      int image_width,
+		      int image_height,
+		      GLubyte *image_buffer) ;
 
 #endif

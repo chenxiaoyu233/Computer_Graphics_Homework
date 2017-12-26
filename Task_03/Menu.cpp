@@ -3,6 +3,13 @@
 
 void processMenuEvents(int option) {
 	switch(option){
+		case mSave:
+			write_JPEG_file("新文档.jpeg", 
+					100, 
+					paper-> Width,
+				       	paper -> Height,
+				       	paper -> paper);
+			break;
 		case mKeyPoint:
 			isAddingKeyPoint = 1;
 			break;

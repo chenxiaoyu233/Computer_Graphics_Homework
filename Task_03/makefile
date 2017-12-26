@@ -1,6 +1,6 @@
 main: main.cpp Paper.o Pen.o Automaton.o Menu.o KeyPoint.o Point.o Shape.o Circle.o Line.o Square.o Polygon.o Bezier.o Ellipse.o Fill.o FillAlgorithm.o Interface.o SelectBox.o Bar.o
 	g++ main.cpp Paper.o Pen.o Automaton.o Menu.o KeyPoint.o Point.o Shape.o Circle.o Line.o Square.o Polygon.o Bezier.o Ellipse.o Fill.o FillAlgorithm.o Interface.o SelectBox.o Bar.o \
-		-framework OpenGL -framework GLUT -framework Foundation \
+		-framework OpenGL -framework GLUT -framework Foundation -ljpeg\
 		-g -o main.cpp.out
 Automaton.o: Automaton.cpp Automaton.h Menu.h LineAlgorithm.h
 	g++ Automaton.cpp -c -g
